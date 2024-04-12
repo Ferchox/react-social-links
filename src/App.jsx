@@ -1,24 +1,22 @@
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import avatarJessica from "../public/avatar-jessica.jpeg"
-
+import Card from "./componentes/Card";
 function App() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch("https://661037ce0640280f219c98bb.mockapi.io/api/v2/users")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setUsers(data);
+      });
+  }, []);
   return (
     <>
-      <div className="container">
-        <div className="cuadro">
-          <div className="img">
-            <img src={avatarJessica} alt="" />
-          </div>
-          <h1>Jessica Randall</h1>
-          <h2>London, United Kingdom</h2>
-          <h3>"Front-end developer and avid reader"</h3>
-          <button>GitHub</button>
-          <button>Frontend Mentor</button>
-          <button>LinkedIn </button>
-          <button>Twitter</button>
-          <button>Instagram</button>
-        </div>
-      </div>
+      {users.map((user) => (
+        <Card key={user.id} user={user} />
+      ))}
     </>
   );
 }
