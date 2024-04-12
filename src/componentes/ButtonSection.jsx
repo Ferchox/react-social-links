@@ -1,14 +1,14 @@
 import React from "react";
 import "./ButtonSection.css";
-export const ButtonSection = () => {
+export const ButtonSection = ({socialLinks}) => {
   return (
     <>
       <div className="contenedor1">
-        <button>GitHub</button>
-        <button>Frontend Mentor</button>
-        <button>LinkedIn </button>
-        <button>Twitter</button>
-        <button>Instagram</button>
+        {
+          socialLinks.map(
+            socialLinks=> <button key={socialLinks.main}>{socialLinks.main}</button>
+          )
+        }
       </div>
     </>
   );
