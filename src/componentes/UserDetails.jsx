@@ -7,11 +7,11 @@ const UserDetails = (props) => {
   return (
     <>
       <div className="img">
-        <img src={user.avatar} alt={`avatar de ${user.name}`} />
+        <img src={user.image} alt={`avatar de ${user.name}`} />
       </div>
       <h1>{user.name}</h1>
-      <h2>{user.location}</h2>
-      <h3>{user.description}</h3>
+      <h2>Estado: {user.status}</h2>
+      <h3>Especie: {user.species}</h3>
     </>
   );
 };

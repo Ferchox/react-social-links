@@ -4,7 +4,16 @@ import Card from "./componentes/Card";
 function App() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("https://661037ce0640280f219c98bb.mockapi.io/api/v2/users")
+    const randoms = [];
+    let misRandoms="";
+    let n = 0;
+    while (n < 10) {
+      const numeroAleatorio = Math.floor(Math.random() * 825) + 1;
+      misRandoms=misRandoms+numeroAleatorio+", ";
+      n++;
+    }
+    let rickAPI="https://rickandmortyapi.com/api/character/"+misRandoms;
+    fetch(rickAPI)
       .then((res) => {
         return res.json();
       })
@@ -22,4 +31,3 @@ function App() {
 }
 
 export default App;
- 
