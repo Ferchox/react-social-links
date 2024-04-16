@@ -10,8 +10,14 @@ const UserDetails = (props) => {
         <img src={user.image} alt={`avatar de ${user.name}`} />
       </div>
       <h1>{user.name}</h1>
-      <h2>Estado: {user.status}</h2>
-      <h3>Especie: {user.species}</h3>
+      {user.status === "Dead" ? (
+        <h4>Muerto</h4>
+      ) : user.status === "unknown" ? (
+        <h5>Desconocido</h5>
+      ) : (
+        <h2>Vivo</h2>
+      )}
+      <h3>{user.species} de {user.origin.name}</h3>
     </>
   );
 };

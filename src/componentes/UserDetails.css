@@ -12,13 +12,27 @@ h1 {
 h2 {
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 20px;
   color: hsl(75, 94%, 57%);
   font-weight: 600;
 }
 h3 {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 24px;
   color: #ffffff;
   font-weight: 400;
+}
+h4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: hsl(0 93.64% 56.86%);
+  font-weight: 600;
+}
+h5 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: hsl(24.94 100% 50%);
+  font-weight: 600;
 }
