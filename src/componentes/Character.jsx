@@ -5,10 +5,12 @@ import Episodes from "./Episodes";
 
 function Character(props) {
   const character = props.character;
+  
   return (
-    <div className="container">
+    <div className="container-personaje">
         <CharacterData character={character} />
-        <Episodes episodes={character.episode}></Episodes>
+        <Episodes episodes={character.episode}/>
+        <button className="home">Home</button>
     </div>
   );
 }
