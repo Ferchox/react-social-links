@@ -2,22 +2,24 @@ import React from "react";
 import "./UserDetails.css";
 
 const UserDetails = (props) => {
-  const user = props.user;
+  const character = props.character;
 
   return (
     <>
       <div className="img">
-        <img src={user.image} alt={`avatar de ${user.name}`} />
+        <img src={character.image} alt={`avatar de ${character.name}`} />
       </div>
-      <h1>{user.name}</h1>
-      {user.status === "Dead" ? (
+      <h1>{character.name}</h1>
+      {character.status === "Dead" ? (
         <h4>Muerto</h4>
-      ) : user.status === "unknown" ? (
+      ) : character.status === "unknown" ? (
         <h5>Desconocido</h5>
       ) : (
         <h2>Vivo</h2>
       )}
-      <h3>{user.species} de {user.origin.name}</h3>
+      <h3>
+        {character.species} de {character.origin.name}
+      </h3>
     </>
   );
 };

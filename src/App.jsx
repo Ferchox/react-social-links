@@ -1,14 +1,11 @@
 import React from "react";
 import "./App.css";
-import RickAndMortyApp from "./componentes/RickAndMortyApp";
-
+import Navigation from "./routes/Navigation"
 function App() {
   
   return (
     <>
-      {characters.map((character) => (
-        <RickAndMortyApp />
-      ))}
+      <Navigation></Navigation>
     </>
   );
 }

@@ -1,16 +1,18 @@
 import React from "react";
 import "./Card.css";
 import UserDetails from "./UserDetails";
-import ButtonSection from "./ButtonSection";
+import { NavLink } from "react-router-dom";
 
 function Card(props) {
-  const user = props.user;
+  const character = props.character;
   return (
-    <div className="container">
-      <div className="cuadro">
-        <UserDetails user={user} />
+    <NavLink to ('/character/')>
+      <div className="container">
+        <div className="cuadro">
+          <UserDetails character={character} />
+        </div>
       </div>
-    </div>
+    </NavLink>
   );
 }
 

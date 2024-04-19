@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Card from "./componentes/Card";
-import Character from "./componentes/Character";
+import Card from "./Card";
 
-function RickAndMortyApp() {
+export const Home = () => {
   const [characters, setCharacters] = useState([]);
   useEffect(() => {
     const randoms = [];
     let misRandoms = "";
     let n = 0;
-    while (n < 1) {
+    while (n < 10) {
       const numeroAleatorio = Math.floor(Math.random() * 825) + 1;
       misRandoms = misRandoms + numeroAleatorio + ", ";
       n++;
@@ -26,10 +25,9 @@ function RickAndMortyApp() {
     <>
       {characters.map((character) => (
         /* <Card key={character.id} character={character} /> */
-        <Character key={character.id} character={character} />
+        <Card key={character.id} character={character} />
       ))}
     </>
   );
-}
-
-export default RickAndMortyApp;
+};
+export default Home;
