@@ -15,6 +15,7 @@ function CharacterData(props) {
 
   return (
     <div className="container-info-personaje">
+      <div className="titulo">{character.name}</div>
       <img src={character.image} />
       <button className={statusClass}>{character.status}</button>
       <div className="descripcion">{character.type}</div>
