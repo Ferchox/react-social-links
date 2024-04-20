@@ -1,13 +1,3 @@
-:root {
-  /* ### Primary */
-  --Green: hsl(75, 94%, 57%);
-  /* ### Neutral */
-  --White: hsl(0, 0%, 100%);
-  --Grey: hsl(0, 0%, 20%);
-  --DarkGrey: hsl(0, 0%, 12%);
-  --OffBlack: hsl(0, 0%, 8%);
-}
-
 .container-personaje {
   padding: 1vh 1vh 3vh 1vh;
   display: flex;
@@ -20,7 +10,7 @@
   box-shadow: 2px 4px 15px var(--Grey);
   scale: 0.9;
 }
-.home{
+.home {
   width: 20vh;
   color: var(--Green);
 }

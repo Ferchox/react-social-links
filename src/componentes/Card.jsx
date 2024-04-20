@@ -3,10 +3,9 @@ import "./Card.css";
 import UserDetails from "./UserDetails";
 import { NavLink } from "react-router-dom";
 
-function Card(props) {
-  const character = props.character;
+const Card = ({ character }) => {
   return (
-    <NavLink to ('/character/')>
+    <NavLink to={`/react-social-links/character?id=${character.id}`}>
       <div className="container">
         <div className="cuadro">
           <UserDetails character={character} />
@@ -14,6 +13,6 @@ function Card(props) {
       </div>
     </NavLink>
   );
-}
+};
 
 export default Card;

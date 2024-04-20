@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 
-export const Home = () => {
+const Home = () => {
   const [characters, setCharacters] = useState([]);
   useEffect(() => {
     const randoms = [];
@@ -23,9 +23,8 @@ export const Home = () => {
   }, []);
   return (
     <>
-      {characters.map((character) => (
-        /* <Card key={character.id} character={character} /> */
-        <Card key={character.id} character={character} />
+      {characters.map((character, index) => (
+        <Card key={index} character={character} />
       ))}
     </>
   );

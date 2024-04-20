@@ -7,9 +7,9 @@ const Navigation = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element= {<Home/>} />
-        <Route path="/character" element= {<RickAndMortyApp/>} />
-        <Route path="/*" element= {<p>Error 404 Recurso no encontrado</p>} />
+        <Route path="/react-social-links/" element={<Home />} />
+        <Route path="/react-social-links/character" element={<RickAndMortyApp />} />
+        <Route path="/react-social-links/*" element={<p>Error 404 Recurso no encontrado</p>} />
       </Routes>
     </BrowserRouter>
   );

@@ -3,10 +3,13 @@ import "./Episodes.css";
 
 const Episodes = ({ episodes }) => {
   const [episodesData, setEpisodesData] = useState([]);
-  let n = 0;
+
   useEffect(() => {
     const fetchEpisodes = async () => {
       try {
+        if (!episodes || episodes.length === 0) {
+          return;
+        }
         const episodesPromises = episodes.map((url) =>
           fetch(url).then((res) => res.json())
         );
@@ -16,22 +19,24 @@ const Episodes = ({ episodes }) => {
         console.error("Error fetching episodes:", error);
       }
     };
-
+  
     fetchEpisodes();
   }, [episodes]);
+  
+  
+
+  const filteredEpisodesData = episodesData.slice(0, 4);
 
   return (
     <div className="container-episodios">
-      {episodesData.map((episode, index) =>
-        index !== 4 ? (
-          <div className="cuadro" key={episode.id}>
-            <p>
-              <strong>Nombre del episodio:</strong> {episode.name}
-            </p>
-            <p>Fecha al aire: {episode.air_date}</p>
-          </div>
-        ) : null
-      )}
+      {filteredEpisodesData.map((episode, index) => (
+        <div className="cuadro-episodio" key={episode.id}>
+          <p>
+            <strong>Nombre del episodio:</strong> {episode.name}
+          </p>
+          <p>Fecha al aire: {episode.air_date}</p>
+        </div>
+      ))}
     </div>
   );
 };
