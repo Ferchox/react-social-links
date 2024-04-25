@@ -5,7 +5,10 @@ import { NavLink } from "react-router-dom";
 
 const Card = ({ character }) => {
   return (
-    <NavLink to={`/react-social-links/character?id=${character.id}`}>
+    <NavLink
+      to={`/react-social-links/character?id=${character.id}`}
+      className="navlink"
+    >
       <div className="container">
         <div className="cuadro">
           <UserDetails character={character} />
